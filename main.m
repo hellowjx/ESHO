@@ -7,9 +7,10 @@ Max_iteration=500; % Maximum numbef of iterations
 figure('Position',[100 200 500 350])
 Function_name=sprintf('%s%d', 'F', 1);
 % Load details of the selected benchmark function
-[lb,ub,dim,fobj]=Get_Functions_details(Function_name);
-
-%fobj
+fobj = @Chung_Reynolds;
+lb = -100;
+ub = 100;
+dim = 30;
 [Best_score,Best_pos,ESHO_cg_curve]=ESHO(SearchAgents_no,Max_iteration,lb,ub,dim,fobj);
 
 %Draw objective space
